@@ -54,10 +54,10 @@
     .nav::after { content: ""; }
     .brand { display: block; line-height: 0; flex: 0 0 auto; }
     .brand img { width: 66px; height: auto; mix-blend-mode: multiply; background: transparent; }
-    nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 24px; }
-    nav a { text-decoration: none; font-size: .93rem; color: var(--muted); }
-    nav a:hover { color: var(--purple); }
-    nav a.button, nav a.button:hover { color: var(--white); }
+    header nav ul { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 24px; }
+    header nav a { text-decoration: none; font-size: .93rem; color: var(--muted); }
+    header nav a:hover { color: var(--purple); }
+    header nav a.button, header nav a.button:hover { color: var(--white); }
     .menu-toggle {
       display: none; width: 46px; height: 46px; border-radius: 12px; border: 1px solid var(--border);
       background: var(--white); color: var(--purple-dark); cursor: pointer; padding: 0;
@@ -182,34 +182,6 @@
     .form-status { text-align: center; margin: 16px 0 0 !important; font-weight: 600; color: #fff !important; }
 
     /* Rodapé */
-    footer { padding: 32px 0; background: #34233a; color: #d9cdda; font-size: .88rem; }
-    .footer-name { font-weight: 700; color: #fff; font-size: 1rem; }
-    .footer-cols { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 24px; align-items: stretch; }
-    .footer-newsletter { min-width: 0; text-align: center; }
-    .footer-newsletter > h3 { margin: 0 0 8px; color: #fff; font-size: 1.05rem; }
-    .footer-newsletter > p { margin: 0 0 14px; }
-    footer p { margin: 4px 0; }
-    footer a { color: #fff; text-underline-offset: 3px; }
-    .footer-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 28px; margin: 28px 0 0; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.18); }
-    .disclaimer { font-size: .85rem; opacity: .95; margin: 14px 0 0; line-height: 1.6; }
-    .emergency { margin: 0; padding: 18px 20px; border: 1px solid rgba(255,255,255,.28); border-radius: 14px; background: rgba(255,255,255,.07); line-height: 1.65; }
-    .emergency h3 { margin: 0 0 8px; font-size: 1.05rem; color: #fff; }
-    .emergency p { margin: 7px 0; }
-    .emergency a { color: inherit; text-underline-offset: 3px; }
-    @media (max-width: 760px) {
-    .footer-links {
-      flex-direction: column;
-      align-items: center;
-      gap: 14px;
-      text-align: center;
-    }
-
-    .footer-links a {
-      display: block;
-      max-width: 100%;
-      overflow-wrap: anywhere;
-    }
-}
 
 
     .newsletter-section .md-signup-canvas--text p { font-size: 14px !important; line-height: 1.4 !important; }
@@ -219,9 +191,6 @@
     .newsletter-section .md-embedded-form--input-el { min-height: 36px !important; padding: 8px !important; }
     .newsletter-section .md-signup-canvas--nodes { gap: 8px !important; }
     .newsletter-section .md-signup-canvas--box { height: 100%; }
-    .footer-micro { margin-top: 24px; padding: 16px 12px 0; border-top: 1px solid rgba(255,255,255,.2); text-align: center; font-size: .82rem; line-height: 1.7; }
-    .footer-micro p { margin: 4px 0; }
-    .footer-micro .footer-links { margin: 8px 0 0; padding-top: 8px; border-top: 0; gap: 6px 18px; }
     .newsletter-section .md-signup-canvas--box { background-color: #EDE2F6 !important; }
     /* Percursos ilustrados: carrossel horizontal acessível */
     .pathways-track { display:flex; gap:20px; overflow-x:auto; padding:8px 2px 22px; scroll-snap-type:x mandatory; scrollbar-color:var(--purple) #eee5ef; scrollbar-width:thin; }
@@ -243,7 +212,7 @@
     /* Tablet */
     @media (max-width: 1000px) {
       .cards.three { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      nav ul { gap: 18px; }
+      header nav ul { gap: 18px; }
     }
 
     /* Menu em ecrãs menores */
@@ -252,27 +221,25 @@
       .nav { display: flex; justify-content: space-between; }
       .nav::after { display: none; }
       .js .menu-toggle { display: inline-flex; }
-      .js nav {
+      .js header nav {
         position: absolute; left: 0; right: 0; top: 100%; background: var(--cream);
         border-bottom: 1px solid var(--border); box-shadow: 0 18px 30px rgba(67,45,75,.10);
         display: none; padding: 8px 20px 22px;
       }
-      .js nav.open { display: block; }
-      .js nav ul { flex-direction: column; align-items: stretch; gap: 0; }
-      .js nav li { border-bottom: 1px solid var(--border); }
-      .js nav li:last-child { border: 0; padding-top: 16px; }
-      .js nav a:not(.button) { display: block; padding: 15px 4px; font-size: 1.02rem; }
-      .js nav a.button { display: flex; }
+      .js header nav.open { display: block; }
+      .js header nav ul { flex-direction: column; align-items: stretch; gap: 0; }
+      .js header nav li { border-bottom: 1px solid var(--border); }
+      .js header nav li:last-child { border: 0; padding-top: 16px; }
+      .js header nav a:not(.button) { display: block; padding: 15px 4px; font-size: 1.02rem; }
+      .js header nav a.button { display: flex; }
       /* sem JavaScript: a navegação passa para baixo da logo */
       html:not(.js) .nav { flex-wrap: wrap; padding: 10px 0; }
-      html:not(.js) nav ul { flex-wrap: wrap; gap: 8px 18px; }
+      html:not(.js) header nav ul { flex-wrap: wrap; gap: 8px 18px; }
     }
 
     @media (max-width: 800px) {
       .hero-grid, .about-grid, .approach-grid { grid-template-columns: 1fr; gap: 38px; }
       .hero-cta { margin-top: 32px; }
-      .footer-cols { grid-template-columns: 1fr; gap: 28px; }
-      .footer-newsletter { max-width: 440px; width: 100%; margin: 0 auto; }
       .hero-text { text-align: center; }
       .hero { padding: 36px 0 64px; }
       h1.hero-logo { margin-bottom: 28px; }
@@ -290,48 +257,13 @@
       .card, .approach-panel { padding: 23px; }
       .contact-form { padding: 24px 18px; }
       .about-aside { padding: 24px; }
-      .js nav { padding: 6px 14px 20px; }
+      .js header nav { padding: 6px 14px 20px; }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       * { transition: none !important; }
     }
   
-    /* Ajustes do rodapé: apenas emergência + newsletter, sem duplicar blocos */
-    .footer-cols { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:20px; align-items:stretch; }
-    .footer-cols > div { min-width:0; }
-    .footer-newsletter { width:100%; max-width:280px; justify-self:end; align-self:stretch; }
-    .footer-newsletter .newsletter-section { margin:0; padding:10px !important; height:100%; }
-    .footer-newsletter .newsletter-shell { width:100%; max-width:260px; margin:0 auto; }
-    .footer-newsletter .md-signup-canvas--box { padding:10px !important; }
-    .footer-newsletter .md-signup-canvas--nodes { gap:6px !important; }
-    .footer-newsletter input, .footer-newsletter button, .footer-newsletter select { min-height:32px !important; padding:6px 8px !important; font-size:13px !important; }
-    .footer-newsletter h2, .footer-newsletter h3 { font-size:17px !important; line-height:1.25 !important; margin:0 0 6px !important; }
-    .footer-newsletter p, .footer-newsletter label { font-size:12px !important; line-height:1.4 !important; margin:0 0 6px !important; }
-    .footer-micro { display:block; width:100%; clear:both; }
-    @media (max-width:800px) { .footer-cols { grid-template-columns:1fr; gap:18px; } .footer-newsletter { justify-self:center; max-width:280px; width:100%; } }
-
-
-    /* Newsletter compacta; dados profissionais ficam apenas na barra inferior */
-    .footer-cols { display:grid; grid-template-columns:minmax(0,1fr) minmax(240px,280px); gap:20px; align-items:stretch; }
-    .footer-cols > div { min-width:0; }
-    .footer-newsletter { width:100%; max-width:280px; justify-self:end; align-self:start; min-width:0; }
-    .footer-newsletter .newsletter-section { margin:0; padding:0 !important; height:auto; }
-    .footer-newsletter .newsletter-shell { width:100%; max-width:260px; margin:0 auto; }
-    .footer-newsletter .md-signup-canvas { max-width:100% !important; width:100% !important; }
-    .footer-newsletter .md-signup-canvas--box { padding:10px !important; border-radius:12px !important; }
-    .footer-newsletter .md-signup-canvas--nodes { gap:7px !important; }
-    .footer-newsletter .md-signup-canvas--column { gap:8px !important; }
-    .footer-newsletter .md-signup-canvas--text { font-size:12px !important; line-height:1.35 !important; }
-    .footer-newsletter .md-signup-canvas--text:first-child { font-size:17px !important; line-height:1.2 !important; }
-    .footer-newsletter .md-signup-canvas--text p { margin:0 !important; }
-    .footer-newsletter [data-md-signup-canvas-form] { padding:8px !important; border-radius:9px !important; }
-    .footer-newsletter form { gap:7px !important; }
-    .footer-newsletter .md-embedded-form--input-title, .footer-newsletter .md-signup-topics--label, .footer-newsletter .md-signup-topics--description, .footer-newsletter .md-signup-canvas--signup-footer-text { font-size:11px !important; line-height:1.3 !important; }
-    .footer-newsletter .md-embedded-form--input-el { min-height:32px !important; padding:6px 8px !important; font-size:12px !important; }
-    .footer-newsletter .md-embedded-form--btn { min-height:34px !important; padding:0 12px !important; font-size:12px !important; }
-    .footer-micro { display:block; width:100%; clear:both; margin-top:24px; }
-    @media (max-width:800px) { .footer-cols { grid-template-columns:1fr; gap:18px; } .footer-newsletter { justify-self:center; max-width:280px; width:100%; } }
 </style>
 <link href="https://form.maildroppa.com/index.css" rel="stylesheet"/>
 <style id="maildroppa-lilac-theme">
@@ -350,14 +282,6 @@
     .newsletter-section .md-embedded-form--footer { background: transparent !important; color: #6f4b78 !important; }
     .newsletter-section .md-embedded-form--logo-wrapper { color: #6f4b78 !important; }
     .newsletter-section a { color: #6f4b78; }
-    .footer-newsletter .newsletter-section .md-signup-canvas--box { padding: 16px !important; border-radius: 14px !important; box-shadow: none !important; }
-    .footer-newsletter .newsletter-section .md-signup-canvas { max-width: 100% !important; }
-    .footer-newsletter .newsletter-section .md-embedded-form--title { font-size: 21px !important; line-height: 1.25 !important; }
-    .footer-newsletter .newsletter-section .md-embedded-form--text { font-size: .9rem !important; line-height: 1.45 !important; }
-    .footer-newsletter .newsletter-section .md-embedded-form--input-el { min-height: 38px !important; }
-    .footer-newsletter .newsletter-section .md-embedded-form--btn { min-height: 40px !important; }
-    @media (max-width: 800px) { .footer-newsletter .newsletter-shell { max-width: 420px; } }
-    @media (max-width: 600px) { .footer-newsletter .newsletter-section .md-signup-canvas--box { padding: 18px !important; } }
   
     /* Ajustes de composição solicitados */
     .brand img { width: 190px; max-height: 74px; object-fit: contain; }
@@ -374,24 +298,45 @@
     .contact-form-wrap { min-width: 0; }
     .contact-form { max-width: none; margin: 0; }
     .contact-form h3 { text-align: center; }
-    .footer-cols { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 20px; align-items: stretch; }
-    .footer-id { text-align: center; display:flex; flex-direction:column; justify-content:center; }
-    .footer-id .footer-name { font-weight:700; font-size:1.05rem; }
-    .footer-newsletter { background:#EDE2F6; color:#4B345B; border:1px solid #D6C3E7; border-radius:16px; padding:16px; align-self:stretch; }
-    .footer-newsletter .newsletter-section { background:transparent !important; }
-    .footer-newsletter .md-signup-canvas--box, .footer-newsletter [data-md-signup-canvas-form], .footer-newsletter [data-id="maildroppa-wrap-gdprForm"], .footer-newsletter [data-id="maildroppa-SuccessMessage"] { background:#EDE2F6 !important; }
-    .footer-newsletter .md-signup-canvas--text { color:#4B345B !important; }
-    .footer-newsletter #newsletter-title { font-size:1.2rem !important; }
-    .footer-newsletter .md-signup-canvas--box { border-color:#D6C3E7 !important; }
-    .footer-links { justify-content:center; text-align:center; }
-    @media (max-width: 850px) { .footer-cols { grid-template-columns:1fr 1fr; } .footer-newsletter { grid-column:1 / -1; max-width:520px; width:100%; justify-self:center; } }
-    @media (max-width: 700px) { .contact-grid { grid-template-columns:1fr; gap:20px; } .contact-intro { padding:0 4px; } .footer-cols { grid-template-columns:1fr; } .footer-newsletter { grid-column:auto; } .brand img { width:145px; max-height:60px; } }
+    @media (max-width: 700px) { .contact-grid { grid-template-columns:1fr; gap:20px; } .contact-intro { padding:0 4px; } .brand img { width:145px; max-height:60px; } }
 </style>
-<style id="footer-structure-fix">
-/* A newsletter contains only its subscription form. Legal identity is a separate sibling below. */
-footer .footer-cols { display:grid !important; grid-template-columns:minmax(0,1fr) minmax(0,1fr) !important; gap:24px !important; align-items:stretch !important; }
-footer .footer-emergency-column { min-width:0; }
-footer .footer-newsletter { width:100% !important; max-width:none !important; min-width:0 !important; justify-self:stretch !important; align-self:stretch !important; box-sizing:border-box !important; }
+<style id="footer-styles">
+/* ==========================================================
+   RODAPÉ — único lugar com regras do footer
+   ========================================================== */
+footer { padding: 32px 0; background: #34233a; color: #d9cdda; font-size: .88rem; }
+footer p { margin: 4px 0; }
+footer a { color: #fff; text-underline-offset: 3px; }
+
+/* Colunas: 1 coluna se só houver o aviso de emergência; 2 se a newsletter for reativada */
+.footer-cols {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+.footer-emergency-column { min-width: 0; }
+
+/* Aviso de emergência */
+.emergency { margin: 0; padding: 18px 20px; border: 1px solid rgba(255,255,255,.28); border-radius: 14px; background: rgba(255,255,255,.07); line-height: 1.65; }
+.emergency h3 { margin: 0 0 8px; font-size: 1.05rem; color: #fff; }
+.emergency p { margin: 7px 0; }
+.emergency a { color: inherit; text-underline-offset: 3px; }
+.disclaimer { font-size: .85rem; opacity: .95; margin: 14px 0 0; line-height: 1.6; }
+
+/* Newsletter (Maildroppa) — hoje comentada no HTML; estilos mantidos para reativar */
+.footer-newsletter {
+  min-width: 0; width: 100%; box-sizing: border-box; text-align: center;
+  background: #EDE2F6; color: #4B345B; border: 1px solid #D6C3E7; border-radius: 16px; padding: 16px;
+}
+@media (max-width: 850px) { .footer-newsletter { max-width: 520px; justify-self: center; } }
+.footer-newsletter .newsletter-section { background:transparent !important; }
+.footer-newsletter .md-signup-canvas--box, .footer-newsletter [data-md-signup-canvas-form], .footer-newsletter [data-id="maildroppa-wrap-gdprForm"], .footer-newsletter [data-id="maildroppa-SuccessMessage"] { background:#EDE2F6 !important; }
+.footer-newsletter .md-signup-canvas--text { color:#4B345B !important; }
+.footer-newsletter #newsletter-title { font-size:1.2rem !important; }
+.footer-newsletter .md-signup-canvas--box { border-color:#D6C3E7 !important; }
+.footer-newsletter .newsletter-section .md-embedded-form--title { font-size: 21px !important; line-height: 1.25 !important; }
+.footer-newsletter .newsletter-section .md-embedded-form--text { font-size: .9rem !important; line-height: 1.45 !important; }
 footer .footer-newsletter .newsletter-section { margin:0 !important; padding:0 !important; height:auto !important; }
 footer .footer-newsletter .newsletter-shell { width:100% !important; max-width:none !important; margin:0 auto !important; }
 footer .footer-newsletter .md-signup-canvas--box { padding:10px !important; background:#EDE2F6 !important; border-radius:10px !important; }
@@ -404,10 +349,27 @@ footer .footer-newsletter .md-embedded-form--input-title { font-size:11px !impor
 footer .footer-newsletter .md-embedded-form--input-el { min-height:30px !important; padding:5px 7px !important; font-size:12px !important; }
 footer .footer-newsletter .md-embedded-form--btn { min-height:32px !important; padding:5px 10px !important; font-size:12px !important; }
 footer .footer-newsletter [data-md-signup-canvas-form] { padding:8px !important; }
-footer .footer-micro { display:block !important; position:static !important; width:100% !important; clear:both !important; box-sizing:border-box; margin-top:22px !important; padding:14px 8px 0 !important; border-top:1px solid rgba(255,255,255,.2) !important; text-align:center !important; font-size:12px !important; line-height:1.6 !important; background:transparent !important; }
-footer .footer-micro p { margin:3px 0 !important; }
-footer .footer-micro .footer-links { display:flex !important; flex-wrap:wrap; justify-content:center; gap:6px 16px !important; margin:7px 0 0 !important; padding:0 !important; border:0 !important; }
-@media(max-width:700px) { footer .footer-cols { grid-template-columns:1fr !important; } footer .footer-newsletter { justify-self:stretch !important; max-width:none !important; } }
+
+/* Barra inferior: copyright, registros profissionais e links legais */
+.footer-micro {
+  margin-top: 22px; padding: 14px 8px 0;
+  border-top: 1px solid rgba(255,255,255,.2);
+  text-align: center; font-size: .8rem; line-height: 1.6;
+}
+.footer-micro p { margin: 3px 0; }
+
+.footer-nav { margin: 10px 0 14px; }
+.footer-links {
+  list-style: none; margin: 0; padding: 0;
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 4px 22px;
+}
+.footer-links a { display: inline-block; padding: 6px 2px; overflow-wrap: anywhere; }
+
+@media (max-width: 700px) {
+  .footer-links { flex-direction: column; align-items: center; gap: 2px; }
+  .footer-links a { padding: 10px 4px; }  /* alvo de toque confortável no celular */
+}
 </style>
 
 <style id="site-novas-secoes">
@@ -730,10 +692,12 @@ footer .footer-micro .footer-links { display:flex !important; flex-wrap:wrap; ju
 <div class="footer-micro">
 <p>© 2026 Ludymila Reis Leal — Psicóloga clínica, perinatal e parental</p>
 <p>Brasil: CRP-RJ 05/57 111 · Portugal: OPP — cédula profissional n.º 031486</p>
-<nav aria-label="Links legais" class="footer-links">
-<a href="politica_privacidade_ludymila.html">Política de Privacidade</a>
-<a href="https://www.livroreclamacoes.pt/Inicio/" rel="noopener noreferrer" target="_blank">Livro de Reclamações Eletrónico <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
-<a href="https://www2.ers.pt/DMZ/Pesquisa/DetalheEstabelecimento.aspx?es=159653" rel="noopener noreferrer" target="_blank">Entidade Reguladora da Saúde (ERS) <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a>
+<nav aria-label="Links legais" class="footer-nav">
+<ul class="footer-links">
+<li><a href="politica_privacidade_ludymila.html">Política de Privacidade</a></li>
+<li><a href="https://www.livroreclamacoes.pt/Inicio/" rel="noopener noreferrer" target="_blank">Livro de Reclamações Eletrónico <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a></li>
+<li><a href="https://www2.ers.pt/DMZ/Pesquisa/DetalheEstabelecimento.aspx?es=159653" rel="noopener noreferrer" target="_blank">Entidade Reguladora da Saúde (ERS) <span aria-hidden="true">↗</span><span class="sr-only"> (abre em nova aba)</span></a></li>
+</ul>
 </nav>
 <p class="newsletter-privacy-note">A newsletter é opcional e pode ser cancelada a qualquer momento pelo link incluído nos e-mails. Consulte a <a href="politica_privacidade_ludymila.html">Política de Privacidade</a>.</p>
 </div>
