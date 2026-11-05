@@ -385,13 +385,6 @@ footer .footer-newsletter [data-md-signup-canvas-form] { padding:8px !important;
 @media(max-width:640px) { .event-empty { flex-direction:column; } .social-links { flex-direction:column; align-items:stretch; } .social-link { justify-content:space-between; } .faq-item { padding:16px; } }
 
 /* ==========================================================
-   Avaliações do Google
-   ========================================================== */
-.google-review-strip{display:flex;align-items:center;gap:clamp(16px,3vw,30px);padding:clamp(20px,3vw,30px);border:1px solid rgba(111,83,133,.18);border-radius:20px;background:rgba(255,255,255,.68);box-shadow:0 10px 30px rgba(74,54,82,.05)}
-.google-review-mark{display:flex;align-items:center;gap:10px;flex-shrink:0;font-weight:650;color:#45404a}.google-g{font-size:34px;font-weight:700;line-height:1;background:conic-gradient(from -45deg,#4285F4 0deg 90deg,#34A853 90deg 180deg,#FBBC05 180deg 250deg,#EA4335 250deg 310deg,#4285F4 310deg);background-clip:text;-webkit-background-clip:text;color:transparent}.google-word{font-size:18px}.google-review-copy{flex:1;min-width:0}.google-review-copy strong{display:block;margin-bottom:5px;color:var(--text,#403747)}.google-review-copy p{margin:0;line-height:1.55}.google-review-link{display:inline-flex;align-items:center;gap:8px;flex-shrink:0;text-decoration:none;font-weight:600;padding:12px 16px;border-radius:999px;border:1px solid currentColor}.google-review-link:hover{opacity:.82}.google-review-note{font-size:.88rem;line-height:1.55;opacity:.78;margin:14px 2px 0}.social-link:focus-visible,.google-review-link:focus-visible{outline:3px solid currentColor;outline-offset:3px}
-@media(max-width:760px){.google-review-strip{align-items:flex-start;flex-direction:column}.google-review-link{align-self:flex-start}}
-
-/* ==========================================================
    Ajustes de outubro/2026 (atendimento, redes sociais, FAQ)
    ========================================================== */
 /* Ajustes solicitados: atendimento e redes em roxo, FAQ branco */
@@ -427,7 +420,3 @@ footer .footer-newsletter [data-md-signup-canvas-form] { padding:8px !important;
 #redes-sociais .social-link .social-icon{color:inherit}
 @media(prefers-reduced-motion:reduce){#redes-sociais .social-link{transition:none}#redes-sociais .social-link:hover{transform:none}}
 
-/* ==========================================================
-   Banner de consentimento de privacidade
-   ========================================================== */
-.cookie-consent{position:fixed;z-index:9999;left:16px;right:16px;bottom:16px;max-width:760px;margin:auto;background:#fffafd;color:#34283a;border:1px solid #d8c6e0;border-radius:18px;box-shadow:0 12px 36px rgba(40,25,45,.22);padding:20px;display:none;font-size:14px;line-height:1.55}.cookie-consent h2{font-size:18px;margin:0 0 8px;color:#68417f}.cookie-consent p{margin:0 0 12px}.cookie-consent a{color:#68417f;text-decoration:underline}.cookie-consent-actions{display:flex;gap:10px;flex-wrap:wrap}.cookie-consent button{border:1px solid #68417f;border-radius:999px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer}.cookie-consent .accept{background:#68417f;color:white}.cookie-consent .reject{background:white;color:#68417f}@media(max-width:560px){.cookie-consent{left:10px;right:10px;bottom:10px;padding:16px}.cookie-consent-actions button{flex:1}}
