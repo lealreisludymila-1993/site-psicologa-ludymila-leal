@@ -1,6 +1,6 @@
 /* Ludymila Leal — script.js
    1) Formulário de contato e menu do cabeçalho
-   2) Consentimento de privacidade / widget de avaliações (Trustindex) */
+   2) Scripts do site */
 
 /* ---- 1) Formulário e menu ---- */
     (function () {
@@ -57,15 +57,3 @@
     })();
   
 
-/* ---- 2) Consentimento de privacidade ---- */
-(function(){
-  var key='ludymila_trustindex_consent_v1';
-  var banner=document.getElementById('cookie-consent');
-  var reviews=document.querySelector('.trustindex-reviews [data-src]');
-  function loadReviews(){if(!reviews||reviews.dataset.loaded==='true')return;reviews.dataset.loaded='true';var s=document.createElement('script');s.src='https://cdn.trustindex.io/loader.js?c413e4b8444e522cd226c9bd40d';s.async=true;s.defer=true;document.head.appendChild(s);}
-  var choice=null;try{choice=localStorage.getItem(key);}catch(e){}
-  if(choice==='accepted'){loadReviews();}else if(choice!=='rejected'){banner.style.display='block';}
-  document.getElementById('cookie-accept').addEventListener('click',function(){try{localStorage.setItem(key,'accepted');}catch(e){}banner.style.display='none';loadReviews();});
-  document.getElementById('cookie-reject').addEventListener('click',function(){try{localStorage.setItem(key,'rejected');}catch(e){}banner.style.display='none';});
-  var reopen=document.getElementById('open-privacy-preferences');if(reopen)reopen.addEventListener('click',function(){banner.style.display='block';});
-})();
