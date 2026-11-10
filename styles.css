@@ -420,3 +420,41 @@ footer .footer-newsletter [data-md-signup-canvas-form] { padding:8px !important;
 #redes-sociais .social-link .social-icon{color:inherit}
 @media(prefers-reduced-motion:reduce){#redes-sociais .social-link{transition:none}#redes-sociais .social-link:hover{transform:none}}
 
+
+
+/* Parcerias no rodapé — logótipos oficiais preservados */
+.footer-partnerships {
+  margin-top: 18px;
+  padding: 18px 20px;
+  border: 1px solid rgba(255,255,255,.55);
+  border-radius: 14px;
+  background: #fff;
+  color: #34233a;
+  text-align: center;
+}
+.footer-partnerships h3 {
+  margin: 0 0 14px;
+  color: #34233a;
+  font-size: 1rem;
+}
+.footer-partnership-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(18px, 4vw, 36px);
+  flex-wrap: wrap;
+}
+.footer-partnership-logos img {
+  display: block;
+  width: min(42%, 190px);
+  max-width: 190px;
+  height: 58px;
+  object-fit: contain;
+}
+.footer-partnership-logos .footer-logo-medicare { width: min(48%, 205px); }
+.footer-partnership-logos .footer-logo-cuida-te { width: min(38%, 150px); }
+@media (max-width: 480px) {
+  .footer-partnerships { padding: 16px 12px; }
+  .footer-partnership-logos { gap: 14px; }
+  .footer-partnership-logos img { height: 48px; }
+}
