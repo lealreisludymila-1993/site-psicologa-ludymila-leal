@@ -505,7 +505,7 @@ footer .footer-newsletter [data-md-signup-canvas-form] { padding:8px !important;
   header nav ul li { flex: 0 1 auto; }
   header nav ul li a:not(.button) {
     display: inline-block;
-    font-size: clamp(.78rem, .82vw, .94rem);
+    font-size: clamp(.82rem, .9vw, .96rem);
     line-height: 1.25;
     white-space: nowrap;
     padding: 10px 0;
