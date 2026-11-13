@@ -588,33 +588,94 @@ footer .footer-newsletter [data-md-signup-canvas-form] { padding:8px !important;
 }
 
 
-/* Ajustes finais da prévia — cache e hierarquia visual */
+
+
+/* Ajustes pontuais solicitados: somente a barra de navegação */
 @media (min-width: 901px) {
-  header .container.nav { width: min(1600px, calc(100% - 40px)); }
-  header .nav { min-height: 104px; gap: clamp(18px, 2.2vw, 38px); }
-  header .brand { flex-basis: 150px; }
-  header .brand img { width: 150px; max-height: 72px; }
-  header nav ul { gap: clamp(8px, .9vw, 16px); }
-  header nav ul li a:not(.button) { font-size: clamp(.88rem, .96vw, 1.02rem); }
-  header nav ul li a.button { font-size: clamp(.84rem, .9vw, .98rem); padding: 13px 18px; }
+  header .container.nav {
+    width: min(1500px, calc(100% - 32px));
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    min-height: 88px;
+  }
+  header .brand { display: none; }
+  header .nav::after { display: none; }
+  header nav { width: 100%; }
+  header nav ul {
+    width: 100%;
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    gap: 8px;
+  }
+  header nav ul li { display: flex; flex: 1 1 auto; }
+  header nav ul li a:not(.button) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 54px;
+    padding: 10px 12px;
+    border: 1px solid rgba(111,75,120,.22);
+    border-radius: 12px;
+    background: #F2EAF3;
+    color: #432D4B;
+    font-size: .84rem;
+    font-weight: 700;
+    line-height: 1.25;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .025em;
+    white-space: normal;
+  }
+  header nav ul li a:not(.button):hover {
+    background: #E5D5E9;
+    border-color: #9A7AA3;
+  }
+  header nav ul li a.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 54px;
+    padding: 10px 15px;
+    border-radius: 12px;
+    font-size: .84rem;
+    line-height: 1.25;
+    white-space: normal;
+    text-align: center;
+  }
 }
 @media (max-width: 900px) {
-  header .nav { min-height: 76px; }
+  header .brand { display: none; }
+  header .nav { grid-template-columns: 1fr auto; }
+  header .nav::after { display: none; }
+  header nav ul li a:not(.button) { text-transform: uppercase; }
 }
-#inicio { background: #FCFAF8; }
-#sobre { background: #F0E6F2; }
-#acompanhamento { background: #FCFAF8; }
-#servicos-complementares { background: #EEE2F1; }
-#abordagem { background: #FCFAF8; }
-#atendimento { background: #6F4B78; }
-#perguntas-frequentes { background: #F8F4F9; }
-#redes-sociais { background: #E9DDEE; }
-#eventos, #parcerias { background: #F0E6F2; }
-#contatos { background: #34233A; }
-.footer-cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
-.footer-emergency-column { grid-column: 1; }
-.footer-newsletter { grid-column: 2; }
+/* O restante do site mantém a largura original; apenas as seções alternam tons suaves. */
+#sobre, #servicos-complementares, #eventos, #parcerias { background: #F2EAF3; }
+#acompanhamento, #abordagem, #perguntas-frequentes { background: #FCFAF8; }
+#atendimento { background: #6F4B78; color: #fff; }
+#atendimento h2, #atendimento .eyebrow { color: #fff; }
+#atendimento p { color: #F4EDF7; }
+#atendimento .button { background: #fff; color: #6F4B78; border-color: #fff; }
+#redes-sociais { background: #E9DDEE; color: #34233A; }
+#redes-sociais .eyebrow, #redes-sociais h2 { color: #432D4B; }
+#redes-sociais .section-heading p { color: #514851; }
+#redes-sociais .social-link { background: #fff; }
+#contatos { background: #FCFAF8; color: #514851; }
+#contatos h2, #contatos .eyebrow { color: #432D4B; }
+#contatos .contact-phrase { color: #514851; }
+/* O rodapé é uma única faixa; dentro dela, só emergência e newsletter ficam em duas colunas. */
+footer { background: #34233A; color: #D9CDDA; }
+.footer-cols {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+.footer-emergency-column, .footer-newsletter { min-width: 0; }
+.footer-newsletter { margin: 0; }
 @media (max-width: 850px) {
- .footer-cols { grid-template-columns: 1fr; }
- .footer-emergency-column, .footer-newsletter { grid-column: 1; }
+  .footer-cols { grid-template-columns: 1fr; }
 }
