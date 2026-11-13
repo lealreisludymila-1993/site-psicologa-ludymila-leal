@@ -458,3 +458,24 @@ footer .footer-newsletter [data-md-signup-canvas-form] { padding:8px !important;
   .footer-partnership-logos { gap: 14px; }
   .footer-partnership-logos img { height: 48px; }
 }
+
+/* Prévia de reorganização — ajustes visuais */
+@media (min-width: 901px) {
+ header .brand { display:none; }
+ header .nav { justify-content:flex-end; gap:1rem; }
+ header nav { width:100%; }
+ header nav ul { width:100%; display:flex; align-items:center; justify-content:space-between; gap:clamp(.35rem,.8vw,.85rem); }
+ header nav ul li { flex:0 1 auto; }
+ header nav ul li a:not(.button) { font-size:clamp(.68rem,.78vw,.86rem); white-space:nowrap; }
+ header nav ul li a.button { white-space:nowrap; padding:.7rem .9rem; font-size:clamp(.68rem,.76vw,.84rem); }
+}
+#acompanhamento .pathways-track { display:grid !important; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1.25rem; overflow:visible !important; scroll-snap-type:none !important; }
+#acompanhamento .pathway-card { width:auto !important; min-width:0 !important; }
+#acompanhamento .pathway-card:nth-child(7) { grid-column:2; }
+.partnership-logos { display:flex; align-items:center; justify-content:center; flex-wrap:wrap; gap:clamp(2rem,6vw,5rem); padding:2rem 1rem; }
+.partnership-logos img { max-width:min(260px,38vw); max-height:110px; object-fit:contain; }
+.partnerships-section { scroll-margin-top:6rem; }
+@media (max-width:900px) {
+ #acompanhamento .pathways-track { grid-template-columns:1fr; }
+ #acompanhamento .pathway-card:nth-child(7) { grid-column:auto; }
+}
