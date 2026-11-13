@@ -586,3 +586,35 @@ footer .footer-newsletter [data-md-signup-canvas-form] { padding:8px !important;
   max-width: 900px;
   margin: 0 auto;
 }
+
+
+/* Ajustes finais da prévia — cache e hierarquia visual */
+@media (min-width: 901px) {
+  header .container.nav { width: min(1600px, calc(100% - 40px)); }
+  header .nav { min-height: 104px; gap: clamp(18px, 2.2vw, 38px); }
+  header .brand { flex-basis: 150px; }
+  header .brand img { width: 150px; max-height: 72px; }
+  header nav ul { gap: clamp(8px, .9vw, 16px); }
+  header nav ul li a:not(.button) { font-size: clamp(.88rem, .96vw, 1.02rem); }
+  header nav ul li a.button { font-size: clamp(.84rem, .9vw, .98rem); padding: 13px 18px; }
+}
+@media (max-width: 900px) {
+  header .nav { min-height: 76px; }
+}
+#inicio { background: #FCFAF8; }
+#sobre { background: #F0E6F2; }
+#acompanhamento { background: #FCFAF8; }
+#servicos-complementares { background: #EEE2F1; }
+#abordagem { background: #FCFAF8; }
+#atendimento { background: #6F4B78; }
+#perguntas-frequentes { background: #F8F4F9; }
+#redes-sociais { background: #E9DDEE; }
+#eventos, #parcerias { background: #F0E6F2; }
+#contatos { background: #34233A; }
+.footer-cols { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; }
+.footer-emergency-column { grid-column: 1; }
+.footer-newsletter { grid-column: 2; }
+@media (max-width: 850px) {
+ .footer-cols { grid-template-columns: 1fr; }
+ .footer-emergency-column, .footer-newsletter { grid-column: 1; }
+}
